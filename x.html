@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>price-quote</title>
+    <style>
+        /* @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'); */
+
+        * {
+            margin: 0;
+            font-family: "Roboto", sans-serif;
+        }
+
+        .full-width {
+            width: 100%;
+        }
+
+        .ligth-grey-color {
+            color: #575757;
+            /* font-size: 10px;
+            line-height: 16px;
+            font-weight: 400; */
+        }
+
+        .display-flex {
+            display: flex;
+        }
+
+        .text-size-xs-medium {
+            font-size: 14px;
+            line-height: 16px;
+            font-weight: 400;
+        }
+
+        .font-size-md-regular {
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 600;
+        }
+
+        .main-contain {
+            width: 96%;
+            /* height: 100vh; */
+            margin: auto;
+            flex-wrap: wrap;
+            gap: 80px;
+        }
+
+        /* 
+        .eg {
+            font-family: "Roboto Slab", serif;
+        } */
+
+        .appbar {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .appbar-section {
+            gap: 10px;
+            padding-top: 5px;
+        }
+
+        /* .builders-logo { */
+        /* width: 122px; */
+        /* height: 64px; */
+        /* } */
+
+        .main-section {
+            /* gap: ; */
+            flex-direction: column;
+        }
+
+        .customer-repair-ticket {
+            justify-content: space-between;
+            align-content: center;
+        }
+
+        .debit-container {
+            background: #cccccc;
+            color: white;
+            text-align: center;
+            margin-top: 3px;
+            margin-bottom: 2px;
+        }
+
+        .customer-message {
+            border: 1.5px solid black;
+            height: 174px;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .message {
+            flex-direction: column;
+            font-size: 12px;
+            line-height: 16px;
+            font-weight: 400;
+            padding-left: 4px;
+        }
+
+        .repair-ticket {
+            height: 180px;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+
+        .ticket {
+            border: 1.5px solid black;
+            width: 44%;
+            height: 52px;
+        }
+
+        .customer-table {
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            th {
+                border-top: 1.5px solid black;
+                border-left: 1.5px solid black;
+                border-right: 1.5px solid black;
+                border-bottom: 1.5px solid #cccccc;
+                background: #cccccc;
+                color: white;
+                font-size: smaller;
+                font-weight: 400;
+            }
+
+            td {
+                border: 1.5px solid black;
+                text-align: center;
+                height: 38px;
+            }
+        }
+
+        .customer-td {
+            text-align: center;
+            height: 38px;
+        }
+
+        .product-table {
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            th {
+                border-top: none;
+                border-right: 1.5px solid black;
+                border-left: 1.5px solid black;
+                border-bottom: 1.5px solid black;
+                /* text-align: left; */
+                padding: 8px;
+            }
+
+            td {
+                border: 1.5px solid black;
+                text-align: center;
+                font-size: 13px;
+                line-height: 16px;
+            }
+        }
+
+        .tnc-table-section {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .tnc-header {
+            font-weight: 500;
+        }
+
+        .terms {
+            font-size: 11px;
+        }
+
+        .product-total {
+            width: 30%;
+
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            td {
+                border: 1.5px solid black;
+                /* text-align: center; */
+                font-size: 13px;
+                line-height: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-contain display-flex">
+        <!-- First Section -->
+        <div class="first-section full-width">
+            <!-- Header Section -->
+            <div class="appbar display-flex">
+                <div class="appbar-section display-flex" style="align-items: center;">
+                    <div class="builders-logo">
+                        <svg width="70" height="67" viewBox="0 0 70 67" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_13095_21081)">
+                                <path d="M3-2H1v68h68V-2H3z" fill="#FFD600" stroke="#fff" stroke-width="4"></path>
+                                <path
+                                    d="M37.425 27.207h3.536v4.425l10.063 6.686h-5.24l-13.5-8.6-13.513 8.6h-5.24l18.753-12.48 5.14 3.43v-2.061z"
+                                    fill="#fff"></path>
+                                <path
+                                    d="M12.605 42.035a.514.514 0 0 1 .12-.379.487.487 0 0 1 .358-.12c.323 0 .486.174.486.52v7.015a.59.59 0 0 1-.122.397.605.605 0 0 1-.723 0 .59.59 0 0 1-.12-.397v-7.035zm0-4.831H9.83l-.02.011v13.971h2.108l.244-.386.504.339c.357.15.742.218 1.128.2.818 0 1.468-.205 1.951-.618a1.612 1.612 0 0 0 .623-1.24v-8.127a1.383 1.383 0 0 0-.582-1.13 2.212 2.212 0 0 0-1.447-.45 4.837 4.837 0 0 0-1.046.1 1.61 1.61 0 0 0-.677.321l-.011-2.991zm44.144 9.426h-2.793v2.418c0 .85.329 1.463.985 1.838.535.307 1.287.452 2.258.452.97 0 1.77-.174 2.332-.522.655-.397.982-1.024.982-1.878v-1.696a2.032 2.032 0 0 0-.58-1.538c-.187-.188-.676-.489-1.468-.903l-1.086-.578a1.207 1.207 0 0 1-.6-1.079v-1.059a.564.564 0 0 1 .14-.42.47.47 0 0 1 .34-.14.418.418 0 0 1 .321.163.529.529 0 0 1 .142.397v2.217h2.732v-2.237c0-.851-.316-1.463-.941-1.836-.526-.307-1.271-.451-2.235-.451s-1.761.174-2.31.519c-.628.402-.942 1.028-.942 1.878v1.52c-.027.44.093.876.341 1.24.383.395.832.72 1.328.957.452.24.917.494 1.427.76.361.227.54.725.54 1.498v.878a.722.722 0 0 1-.118.44.37.37 0 0 1-.323.142.418.418 0 0 1-.34-.142.709.709 0 0 1-.123-.44l-.009-2.398zm-6.773-6.773h-2.8v11.327h2.786v-9.108a.502.502 0 0 1 .122-.377.487.487 0 0 1 .364-.122c.318 0 .48.174.48.52v2.458h2.794v-3.16a1.392 1.392 0 0 0-.583-1.13 2.159 2.159 0 0 0-1.445-.48 3.641 3.641 0 0 0-1.047.14c-.246.059-.477.169-.678.322l.007-.39zm-7.478 2.237a.567.567 0 0 1 .14-.42.506.506 0 0 1 .705 0 .64.64 0 0 1 .117.42v2.61h-.962v-2.61zm-2.793.08v6.773c0 .867.32 1.5.962 1.898.537.335 1.302.502 2.294.502.989 0 1.754-.154 2.287-.452a1.97 1.97 0 0 0 1.007-1.838V46.75h-2.802v2.28a.72.72 0 0 1-.117.438.451.451 0 0 1-.366.142.45.45 0 0 1-.361-.142.72.72 0 0 1-.118-.438v-2.637h3.757v-4.317c0-.851-.338-1.463-1.007-1.836-.55-.3-1.312-.451-2.287-.451-.975 0-1.746.173-2.312.52-.63.401-.944 1.027-.944 1.878l.007-.014zm-4.694-.107c0-.345.158-.52.481-.52a.432.432 0 0 1 .341.14.452.452 0 0 1 .142.36v7.035a.6.6 0 0 1-.122.398.498.498 0 0 1-.361.12.488.488 0 0 1-.361-.12.59.59 0 0 1-.12-.398v-7.015zm-2.795-.698v8.129a1.663 1.663 0 0 0 .661 1.298c.452.375 1.095.56 1.91.56a2.71 2.71 0 0 0 1.145-.201c.168-.11.33-.227.483-.355l.24.38h2.113V37.204h-2.793V40.2a2.062 2.062 0 0 0-.706-.3 4.1 4.1 0 0 0-1.023-.122 2.258 2.258 0 0 0-1.468.451 1.396 1.396 0 0 0-.562 1.13v.01zm-.928-4.167h-2.795v13.984h2.795V37.202zm-3.723 2.655H24.77v11.33h2.795v-11.33zm0-2.653H24.77v2.032h2.795v-2.032zm-7.48 2.655H17.29v9.907a1.4 1.4 0 0 0 .562 1.13c.423.312.941.472 1.467.45.355.008.709-.047 1.046-.16a1.83 1.83 0 0 0 .677-.379v.38h2.8V39.858h-2.793v9.23a.556.556 0 0 1-.122.38.498.498 0 0 1-.361.119c-.323 0-.481-.174-.481-.517v-9.212zm42.973 12.747H6.944v-13.48l2.87-1.918v-.011h.02l22.504-15.026 2.935 1.951h8.58v5.726l9.708 6.482h9.497v16.276zm.677-16.933h-9.97l-9.258-6.168v-6.047h-9.053l-3.13-2.09-26.06 17.405v14.51h57.471v-17.61z"
+                                    fill="#231F20"></path>
+                            </g>
+                            <path stroke="#fff" stroke-width="3" d="M1.5-1.5h67v67h-67z"></path>
+                            <defs>
+                                <clipPath id="clip0_13095_21081">
+                                    <path fill="#fff" d="M3 0h64v64H3z"></path>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div id="builders-deatils" class="text-size-xs-medium ligth-grey-color">
+                        <p style="letter-spacing: 1px;">Builders a division of Massmart Retail (Pty) Ltd.</p>
+                        <p style="letter-spacing: 0.5px;">BUILDERS WAREHOUSE</p>
+                        <p style="letter-spacing: 0.5px;">Reg.No.:2008/011666/07 | VAT No.:4880254414</p>
+                    </div>
+                </div>
+                <div class="appbar-section display-flex" style="gap: 80px;">
+                    <div class="contact-details text-size-xs-medium ligth-grey-color">
+                        <p style="letter-spacing: 1px;">Customer Care Number:</p>
+                        <p style="letter-spacing: 0.5px;">0860 BUILDERS</p>
+                        <p style="letter-spacing: 0.5px;">E-Mail: info@builders.co.za</p>
+                    </div>
+                    <!-- <div class="font-size-md-regular" style="text-align: center; position: relative; bottom: 4px;">
+                        <p>Prepair Quotation</p>
+                        <p>1 / 1</p>
+                    </div> -->
+                </div>
+            </div>
+            <!-- Main Section -->
+            <div class="main-section display-flex">
+                <!-- Customer Repair Ticket -->
+                <div class="customer-repair-ticket display-flex">
+                    <!-- <div class="customer-details customer-message text-size-xs-medium ligth-grey-color"
+                        style="width: 32.7%;">
+                        <p class="debit-container" style="font-size: smaller;">DEBIT ACCOUNT</p>
+                        <div style="padding: 0px 2px;">
+                            <p>CASH CUSTOMER</p>
+                            <p>.</p>
+                            <p>.</p>
+                            <p>SOUTH AFRICA</p>
+                            <p>Omphemetse.sephoti@massmart.co.za</p>
+                            <p>Cust.No:100001/Vat.No:</p>
+                        </div>
+                    </div> -->
+                    <div class="customer-message display-flex" style="width: 60%;">
+                        <p style="font-weight: 600; padding: 1.3px 5px 4px 5px;">Customer Details</p>
+                        <div class="message display-flex">
+                            <!-- <p style="width: 71%; padding: 0px 6px;">Please accept the quotation in order for the repair
+                                agent to proceed with the repair job</p>
+                            <p style="width: 69%; padding: 0px 6px;">Once you have accepted the quotation you may settle
+                                your payment in store when you come in to collect your repaired item</p>
+
+                            <p style="width: 69%; padding: 0px 6px;">Once you have accepted the quotation you may settle
+                                your payment in store when you come in to collect your repaired item</p> -->
+                                <p>Repair Reference number</p>
+                                <p>CustomerName & Customer Surname</p>
+                                <p><a href="#">email.address@address.co.za</a></p>
+                        </div>
+                    </div>
+                    <!-- <div class="repair-ticket display-flex" style="width: 32.7%; align-items: end; gap: 7px;">
+                        <div class="ticket">
+                            <p class="debit-container" style="font-size: smaller;">Repair Ticket</p>
+                            <p style="font-size: 14px; text-align: center;">
+                                8870051133887
+                            </p>
+                        </div>
+                        <p style="display: none;" id="barcode"></p>
+                    </div> -->
+                </div>
+                <!-- Table Section -->
+                <div class="customer-table">
+                    <table style="width: 100%;">
+                        <tr>
+                            <th>DATE/TIME </th>
+                            <th>CUST ORDER No</th>
+                            <th>CASHIER</th>
+                            <th>CUST TEL NO</th>
+                            <th>Date of Quotation</th>
+                        </tr>
+                        <tr>
+                            <td class="customer-td">
+                                15.05.2024</td>
+                            <td class="customer-td"></td>
+                            <td class="customer-td">
+                                Sandiso.Kalani</td>
+                            <td class="customer-td">111111
+                            </td>
+                            <td class="customer-td" style="text-align: center;">14.06.2024</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="product-table">
+                    <table>
+                        <tr>
+                            <th>PRODUCT</th>
+                            <th>DESCRIPTION OF GOODS</th>
+                            <th>QTY</th>
+                            <th>PROMOTION END DATE</th>
+                            <th>UNIT PRIC (excl)</th>
+                            <th>UNIT PRIC (incl)</th>
+                            <th>DISC.Val</th>
+                            <th>NETT AMOUNT (incl)</th>
+                        </tr>
+                        <tr>
+                            <td>6008500801428</td>
+                            <td>TIMBER SAP 38X38MMX4.2M</td>
+                            <td>7.000</td>
+                            <td></td>
+                            <td>42.61</td>
+                            <td>49.00</td>
+                            <td>0.00</td>
+                            <td>343.00</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- Last Section -->
+        <div class="tnc-table-section display-flex full-width">
+            <!-- Terms and Condition -->
+            <div class="tnc">
+                <p class="tnc-header">
+                    Terms and Conditions
+                </p>
+                <div class="terms">
+                    <p>1. All prices quoted are inclusive of VAT.</p>
+                    <p>2. Quotations are valid for 30 days, unless otherwise stated.</p>
+                    <p>3. Prices exclude delivery, unless otherwise stated.</p>
+                    <p>4. Our standard conditions of sale apply.</p>
+                    <p>5. All prices are subject to stock availability unless otherwise stated.</p>
+                    <p>6. All quotes for goods on promotion will be valid for the period of the promotion only & shall
+                        thereafter lapse.</p>
+                    <p>7. You hereby confirm that you have consented to receiving a follow up on this quotation via
+                        phone / email within the next 30 days.</p>
+                </div>
+            </div>
+            <!-- Product Table total -->
+            <div class="product-total">
+                <table>
+                    <tr>
+                        <td style="width: 40%;">SUBTOTAL</td>
+                        <td style="text-align: end;">343.00 </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 40%;">DISCOUNT</td>
+                        <td style="text-align: end;">0.00 </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 40%;">TOTAL</td>
+                        <td style="text-align: end;">343.00</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 40%;">VAT@ 15 %</td>
+                        <td style="text-align: end;">44.74</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
